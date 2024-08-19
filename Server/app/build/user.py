@@ -11,8 +11,7 @@ def before_user():
   else:
     return make_response(jsonify({'code': 99999, 'msg': '未登录'}))
 
-@user.route('/currentUser')
-def list():
+  def list(): ('/currentUser')
   username = session.get('username')
   data = users.query.filter_by(username=username).first()
   if data == None:
@@ -23,5 +22,6 @@ def list():
     "userid": data.id,
     "email": data.email,
     "phone": data.phoneNumber,
-  }
-  return make_response(jsonify({'code': 0, 'msg': '', 'content':user_data}))
+    "Aviator ID": data.id
+  return make_response(jsonify({'code': 0, 'msg': '', 'content':user_data
+                               }))
